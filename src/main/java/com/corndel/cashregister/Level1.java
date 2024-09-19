@@ -4,21 +4,27 @@ import com.corndel.cashregister.models.Item;
 import java.util.List;
 
 public class Level1 {
-  /**
-   * Goes into the given drawer and removes 1 item with the given name.
-   * E.g. ("penny", drawer) removes 1 penny from the given drawer.
-   */
   public static List<Item> removeItem(String name, List<Item> drawer) {
-    // TODO
-    return null;
+    for (var item : drawer) {
+      if (item.name == name && item.quantity > 0) {
+        item.quantity -= 1;
+      }
+    }
+
+    return drawer;
   }
 
   /**
    * The same as removeItem but adds an item of currency instead
    */
   public static List<Item> addItem(String name, List<Item> drawer) {
-    // TODO
-    return null;
+    for (var item : drawer) {
+      if (item.name == name) {
+        item.quantity += 1;
+      }
+    }
+
+    return drawer;
   }
 
   /**
